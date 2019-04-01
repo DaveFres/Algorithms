@@ -4,7 +4,7 @@ function merge(arr1, arr2) {
     let secondAI = 0;
 
     while (firstAI < arr1.length && secondAI < arr2.length) {
-        if(arr1[firstAI] <= arr2[secondAI]) {
+        if (arr1[firstAI] <= arr2[secondAI]) {
             res.push(arr1[firstAI]);
             firstAI++;
         } else {
@@ -13,11 +13,11 @@ function merge(arr1, arr2) {
         }
     }
 
-    while(firstAI < arr1.length) {
+    while (firstAI < arr1.length) {
         res.push(arr1[firstAI]);
         firstAI++;
     }
-    while(secondAI < arr2.length) {
+    while (secondAI < arr2.length) {
         res.push(arr2[secondAI]);
         secondAI++;
     }
