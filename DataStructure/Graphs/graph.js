@@ -1,3 +1,4 @@
+// Simple graph represented as an adjacent list
 class Graph {
     constructor() {
         this.adjacencyList = {};
