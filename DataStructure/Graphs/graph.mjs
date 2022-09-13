@@ -4,7 +4,7 @@ export class Graph {
     this.adjacencyList = {};
   }
   addVertex(vertex) {
-    this.adjacencyList[vertex] = [];
+    if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = [];
   }
   addEdge(vertex1, vertex2) {
     this.adjacencyList[vertex1].push(vertex2);
@@ -40,3 +40,29 @@ g.addEdge('Hong Kong', 'Tokyo');
 g.addEdge('Hong Kong', 'Dallas');
 g.addEdge('Los Angeles', 'Hong Kong');
 g.addEdge('Los Angeles', 'Aspen');
+
+export class WeightedGraph {
+  constructor() {
+    this.adjacencyList = {};
+  }
+
+  addVertex(vertex) {
+    if (!this.adjacencyList[vertex]) this.adjacencyList[vertex] = [];
+  }
+
+  addEdge(vertex1, vertex2, weight) {
+    this.adjacencyList[vertex1].push({ node: vertex2, weight });
+    this.adjacencyList[vertex2].push({ node: vertex1, weight });
+  }
+}
+
+let wg = new WeightedGraph();
+wg.addVertex('A');
+wg.addVertex('B');
+wg.addVertex('C');
+
+wg.addEdge('A', 'B', 9);
+wg.addEdge('A', 'C', 5);
+wg.addEdge('B', 'C', 7);
+
+// console.log('wg.adjacencyList :>> ', wg.adjacencyList);
